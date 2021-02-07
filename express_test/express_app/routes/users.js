@@ -64,9 +64,23 @@ router.get('/', function(req, res, next) {
   //res.send('respond with a resource');
 });*/
 
-router.post('/users', function (req, res) {
+router.post('/', function (req, res) {
     console.log(req.body.title);
-    console.log(req.body.description);
-    res.send('Post page:  ');
+    console.log(req.body.name9);
+    let inputName = req.query.name9;
+    //res.send('Post page:  ');
+    res.render('users', { 
+        title: 'FOrming',
+        name9: inputName
+        })
+    
 });
+router.get('/', function(req, res, next) {
+    let name1 = req.query.name;
+      res.render('users', { 
+      title: 'Express',
+      name: name1,
+    })
+  
+  });
 module.exports = router;
