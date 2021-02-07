@@ -9,7 +9,7 @@ a {
 #container{
     padding: 50px;
   font: 24px "Lucida Grande", Helvetica, Arial, sans-serif;
-  color: #ea00ff;
+  color: #0b7074;
 }
 
 ul {
@@ -31,7 +31,11 @@ li a {
   padding: 14px 16px;
   text-decoration: none;
 }
-
+#feedback {
+padding: 15px;
+font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+color: #4b0aa1;
+}
 /* Change the link color to #111 (black) on hover */
 li a:hover {
   background-color: #111;

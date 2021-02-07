@@ -7,7 +7,14 @@ block content
     li 
       a(href="#home1") home1
     li 
-      a(href='#home2') #{name} 
+      - if (name)
+          a(href='/user') #{name} 's link 
+      - else if (name === "")
+          a(href='#home2') NoName
+      - else 
+          a(href="#home2") OldLink    
+        
+          
     li(style="float:right")
       a(href='#home3',class="active") home2
 
@@ -16,8 +23,11 @@ block content
   
   p  
     #container
-      - if (name === 'testing')
-        p The name is set!
+      - if (name)
+        p 
+        |The name is set to:
+        br
+        i - #{name} -
       - else
         p  No name set!
 
@@ -29,30 +39,36 @@ block content
     p Retrive picture
     div(id="returnPicNew")
 
-  div(id="Inputfields")
-    form(method="POST", action="/users")
-      
-      p Name
-        input(type="text", name="name9")
-      p
-        input(type="submit", value="Add name")
-
+  
   div(id="home2")
     
 
     h2 Name stuff
-    h3= name
-    p  This is 
-      - if (name === 'testing')
-          p #{name};
-      - else
-          p nobody - No name set!       
-    button(onclick='clickme()')  click
-    p This is new: #{something}
-    script.
-      function clickme() {
-        alert('The name is: ' + name })
-      }
+    div(id="Inputfields")
+    form(method="POST", action="/users")
+      
+      p 
+        | Name:
+        br
+        input(type="text", name="name9")
+      p
+        input(type="submit", value="Send name")
+
+    p 
+      | Recieved name: 
+      br
+      | #{name ?  name : ' fault -ain\'t no name there!'}
+      h3 #{name}
+    
+  button(onclick='clickme()')  click
+  p 
+    | This is new (something): 
+    br 
+    i #{newthing}
+  script.
+    function clickme() {
+      alert('The popup.... ')
+    }
 
   div(id="home3")
     p

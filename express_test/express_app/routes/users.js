@@ -67,19 +67,22 @@ router.get('/', function(req, res, next) {
 router.post('/', function (req, res) {
     console.log(req.body.title);
     console.log(req.body.name9);
-    let inputName = req.query.name9;
+    let inputName = req.body.name9;
     //res.send('Post page:  ');
     res.render('users', { 
-        title: 'FOrming',
-        name9: inputName
+        title: 'Forming',
+        inputName: inputName
         })
     
 });
 router.get('/', function(req, res, next) {
-    let name1 = req.query.name;
+    let newName = req.body.name;
+    let inputName = req.body.name9;
+     
       res.render('users', { 
       title: 'Express',
-      name: name1,
+      name: newName,
+      inputName: inputName
     })
   
   });

@@ -5,23 +5,37 @@ block content
  
   ul
     li 
-      a(href="#home1",class="active") home1
+      a(href="/",class="active") home1
     li 
-      a(href='#home2') #{name9} 
+      - if (inputName === "web")
+          a(href='/') New Link - #{inputName} 
+      - else if (inputName === "")
+          a(href='#home2') Nothing
+      - else 
+          a(href='#home2') #{inputName} 
+
     li(style="float:right")
       a(href='#home3') home2
 
   h1= title
   p Welcome to #{title}
-  
-  p Rceived #{name}
+  div#feedback 
+    h5 Received:
+    p          
+      | Name:
+      br
+      b #{inputName}
+      br
+      br
+      i - The end
   div(id="home2")
     p Postpage
   div(id="Inputfields")
     form(method="POST", action="/users")
       
-      p Name
-        input(type="text", name="name9")
+      p. 
+        Name
+      input(type="text", name="name9")
       p
         input(type="submit", value="Add name")
 
