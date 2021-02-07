@@ -1,0 +1,14 @@
+{
+  "name": "azure_functions_test",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "func start",
+    "test": "echo \"No tests yet...\""
+  },
+  "dependencies": {
+    "durable-functions": "^1.4.5",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {}
+}

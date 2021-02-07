@@ -1,0 +1,56 @@
+extends layout
+
+ 
+block content
+ 
+  ul
+    li 
+      a(href="#home1") home1
+    li 
+      a(href='#home2') #{name} 
+    li(style="float:right")
+      a(href='#home3',class="active") home2
+
+  h1= title
+  p Welcome to #{title}
+  
+  p  
+    #container
+      - if (name === 'testing')
+        p The name is set!
+      - else
+        p  No name set!
+
+  div(id="returnMsg")
+    p Returning: 
+  div(id="returnPic")
+
+  p Retrive picture
+  div(id="returnPicNew")
+  div(id="home2")
+    P Name stuff
+    h2= name
+      p This is #{name};
+      button(onclick='clickme()')  click
+      p This is new: #{something}
+    script.
+      function clickme() {
+        alert('The name is: ' + name })
+      }
+    p
+        span(id="errorMsg")
+    div(class="video.wrap")
+      video(autoplay="true", id="video")
+          
+    div(class="controller")
+            
+      button(id="snap")  Capture
+                
+            
+        
+    canvas(id="canvas",width="640", height="480")
+        
+    
+ 
+  
+  

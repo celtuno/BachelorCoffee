@@ -1,0 +1,35 @@
+extends layout
+
+ 
+block content
+ 
+  ul
+    li 
+      a(href="#home1",class="active") home1
+    li 
+      a(href='#home2') home2
+    li(style="float:right")
+      a(href='#home3') #{name} 
+
+  h1= title
+  p Welcome to #{title}
+  
+ 
+  div(id="home2")
+    P Something else
+    h2= name
+      p This is #{name};
+      button(onclick='clickme()')  click
+      p This is new: #{something}
+    script.
+      function clickme() {
+        alert('sss')
+      }
+  p
+    span(id="errorMsg")  
+
+        
+  
+ 
+  
+  
