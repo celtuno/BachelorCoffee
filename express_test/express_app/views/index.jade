@@ -21,22 +21,40 @@ block content
       - else
         p  No name set!
 
-  div(id="returnMsg")
-    p Returning: 
-  div(id="returnPic")
+  div(id="home1")
+    div(id="returnMsg")
+      p Returning: 
+    div(id="returnPic")
 
-  p Retrive picture
-  div(id="returnPicNew")
+    p Retrive picture
+    div(id="returnPicNew")
+
+  div(id="Inputfields")
+    form(method="POST", action="/users")
+      
+      p Name
+        input(type="text", name="name9")
+      p
+        input(type="submit", value="Add name")
+
   div(id="home2")
+    
+
     h2 Name stuff
     h3= name
-      p This is #{name};
-      button(onclick='clickme()')  click
-      p This is new: #{something}
+    p  This is 
+      - if (name === 'testing')
+          p #{name};
+      - else
+          p nobody - No name set!       
+    button(onclick='clickme()')  click
+    p This is new: #{something}
     script.
       function clickme() {
         alert('The name is: ' + name })
       }
+
+  div(id="home3")
     p
         span(id="errorMsg")
     div(class="video.wrap")

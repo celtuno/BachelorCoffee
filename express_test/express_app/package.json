@@ -15,7 +15,9 @@
     "qs": "^6.9.6"
   },
   "main": "app.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
   "author": "",
   "license": "ISC",
   "description": ""

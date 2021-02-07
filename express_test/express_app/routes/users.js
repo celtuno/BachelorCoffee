@@ -54,13 +54,19 @@ snap.addEventListener("click", param => {
           }
 */
           /* GET users listing. */
+          /*
 router.get('/', function(req, res, next) {
   let name1 = req.query.name;
     res.render('users', { 
     title: 'Express',
     name: name1})
   
-  /*res.send('respond with a resource');*/
-});
+  //res.send('respond with a resource');
+});*/
 
+router.post('/users', function (req, res) {
+    console.log(req.body.title);
+    console.log(req.body.description);
+    res.send('Post page:  ');
+});
 module.exports = router;
