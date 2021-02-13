@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded", function() {
     const canvas = document.getElementById('canvas');
     const video = document.getElementById('video');
     const errorMsgElement = document.querySelector('span#errorMsg');
-    const returnPic = document.getElementById('returnPic');  
+    //const returnPic = document.getElementById('returnPic');  
     //var video = document.querySelector("#videoElement");
 
     const Http = new XMLHttpRequest();
